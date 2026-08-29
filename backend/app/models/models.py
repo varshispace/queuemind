@@ -122,3 +122,15 @@ class Decision(Base):
     decided_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
     request = relationship("PatientRequest", back_populates="decision")
+class StaffUser(Base):
+    """Authorized staff members who can review requests and modify policies."""
+    __tablename__ = "staff_users"
+
+    id = Column(String, primary_key=True, default=lambda: gen_id("STAFF"))
+
+    email = Column(String, unique=True, nullable=False)
+    password_hash = Column(String, nullable=False)
+
+    role = Column(String, default="staff", nullable=False)
+
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
