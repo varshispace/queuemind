@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "description": "QueueMind demo operational routing policy. These are OPERATIONAL routing rules used to sort incoming clinic requests into staff workflow queues. They are NOT medical diagnosis rules and must not be presented as clinical judgment.",
+  "confidence_threshold": 0.75,
+  "sla_threshold_minutes": 5,
+  "queues": {
+    "general_consultation": {
+      "label": "General Consultation",
+      "description": "Routine, non-urgent requests for a new or follow-up consultation."
+    },
+    "priority_review": {
+      "label": "Priority Review",
+      "description": "Requests containing priority operational indicators that should be looked at sooner than routine requests."
+    },
+    "urgent_review": {
+      "label": "Urgent Review",
+      "description": "Requests containing urgent operational indicators requiring prompt staff attention."
+    },
+    "administrative": {
+      "label": "Administrative",
+      "description": "Billing, scheduling, prescription-refill, and other non-clinical requests."
+    },
+    "manual_review": {
+      "label": "Manual Review",
+      "description": "Fallback queue for low-confidence, ambiguous, multi-intent, or invalid-extraction cases that require a human to triage from scratch."
+    }
+  },
+  "urgent_indicators": [
+    "as soon as possible",
+    "right away",
+    "immediately",
+    "emergency",
+    "severe",
+    "getting worse",
+    "worsening",
+    "can't breathe",
+    "chest pain",
+    "unbearable",
+    "urgent"
+  ],
+  "priority_indicators": [
+    "persistent",
+    "several days",
+    "for a week",
+    "not improving",
+    "concerned",
+    "worried",
+    "soon",
+    "follow up needed"
+  ],
+  "administrative_request_types": [
+    "billing_administrative",
+    "reschedule",
+    "prescription_question",
+    "test_results_inquiry"
+  ]
+}
