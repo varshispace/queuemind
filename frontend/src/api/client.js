@@ -1,6 +1,6 @@
 // The frontend NEVER calls Gemini directly. It only ever talks to our own
 // FastAPI backend, which is the sole holder of GEMINI_API_KEY / DATABASE_URL.
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API_URL = import.meta.env.VITE_API_URL || 'https://queuemind-backend.onrender.com'
 
 async function request(path, options = {}) {
   const res = await fetch(`${API_URL}${path}`, {
