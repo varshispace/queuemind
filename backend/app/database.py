@@ -16,7 +16,7 @@ engine = create_engine(
     # A hard connect timeout means a temporarily unreachable database fails
     # fast (and is reported honestly) instead of hanging app startup/requests
     # forever. Statement timeout protects against runaway queries.
-    connect_args={"connect_timeout": 5, "options": "-c statement_timeout=15000"},
+    connect_args={"connect_timeout": 5},
 ) if settings.DATABASE_URL else None
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine) if engine else None
