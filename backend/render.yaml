@@ -11,3 +11,7 @@ services:
         sync: false
       - key: ALLOWED_ORIGINS
         sync: false
+      - key: GEMINI_MODEL
+        value: "gemini-2.0-flash"
+    plan: free
+    runtime: python3.12
