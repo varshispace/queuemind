@@ -20,7 +20,7 @@ class Settings:
     DATABASE_URL: str = os.getenv("DATABASE_URL", "")
 
     # --- Gemini model ---
-    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 
     # --- CORS ---
     FRONTEND_ORIGIN: str = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
