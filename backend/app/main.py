@@ -7,7 +7,7 @@ from sqlalchemy.exc import OperationalError, SQLAlchemyError
 
 from app.config import settings
 from app.database import init_db
-from app.routes import intake, review, queue, analytics, policy
+from app.routes import intake, review, queue, analytics, policy, auth
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("queuemind")
@@ -31,6 +31,7 @@ app.include_router(review.router)
 app.include_router(queue.router)
 app.include_router(analytics.router)
 app.include_router(policy.router)
+app.include_router(auth.router)
 
 
 @app.exception_handler(OperationalError)
