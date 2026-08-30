@@ -15,10 +15,47 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/request" element={<PatientRequest />} />
-          <Route path="/dashboard" element={<StaffDashboard />} />
-          <Route path="/review/:id" element={<ReviewPage />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/policy" element={<PolicyAdmin />} />
+          <Route path="/login" element={<Login />} />
+
+
+<Route
+ path="/dashboard"
+ element={
+   <ProtectedRoute>
+     <StaffDashboard />
+   </ProtectedRoute>
+ }
+/>
+
+
+<Route
+ path="/review/:id"
+ element={
+   <ProtectedRoute>
+     <ReviewPage />
+   </ProtectedRoute>
+ }
+/>
+
+
+<Route
+ path="/analytics"
+ element={
+   <ProtectedRoute>
+     <Analytics />
+   </ProtectedRoute>
+ }
+/>
+
+
+<Route
+ path="/policy"
+ element={
+   <ProtectedRoute>
+     <PolicyAdmin />
+   </ProtectedRoute>
+ }
+/>
         </Routes>
       </main>
       <footer className="text-center text-xs text-mind-400 py-6">
