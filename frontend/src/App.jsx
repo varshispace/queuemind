@@ -6,8 +6,10 @@ import StaffDashboard from './pages/StaffDashboard.jsx'
 import ReviewPage from './pages/ReviewPage.jsx'
 import Analytics from './pages/Analytics.jsx'
 import PolicyAdmin from './pages/PolicyAdmin.jsx'
+import Login from './pages/Login.jsx'
+import ProtectedRoute from './components/ProtectedRoute.jsx'
 
-export default function App() {
+export default function App() { 
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
